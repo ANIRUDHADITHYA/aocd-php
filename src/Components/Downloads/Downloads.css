@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+.downloads{
+    background-image: url("../Images/interlaced.png");
+}
+.downloads-header
+{
+    min-height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Images/Backdrop1.jpg");
+    background-position:top;
+    background-size: cover;
+    position: relative;
+}
+
+.downloads-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: poppins,sans-serif;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position:absolute;
+    width: 80%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.downloads-heading h1{
+    font-size: 62px;    
+    text-align: center;
+}
+.downloads-content h1, .downloads-content h3, .downloads-content h5{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    color: rgb(85, 85, 85);
+}
+.downloads-content h3{
+    color: rgb(119, 117, 117);
+}
+.downloads-content{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 25px;
+}
+.download_col{
+    padding: 20px;
+}
+.download-format{
+    display: flex;
+    justify-content: center;
+    
+}
+.download-format h5{
+    padding: 5px 15px;
+    border: 2px solid rgb(53, 53, 53);
+    cursor: pointer;
+    background: rgb(19, 95, 180);
+    color: white;
+    transition: 0.5s;
+}
+.download-format h5:hover{
+    background-color: rgb(42, 86, 128);
+}
+.download-format span h5{
+    border: none;
+    background: none;
+}
+.download_col h3{
+    padding-bottom: 10px;
+}
+.stick{
+    border-left: 1px solid grey;
+    padding: 0;
+    margin: 0;
+}
+.download-format a{
+    text-decoration: none;
+    color: white;
+}
+.download-format i{
+    padding-right: 7px;
+}
+@media(max-width: 960px){
+    .downloads-heading h1{
+        font-size: 40px;
+
+    }
+    .downloads-content{
+        flex-direction: column;
+    }
+    .stick{
+        border: none;
+    }
+    
+}

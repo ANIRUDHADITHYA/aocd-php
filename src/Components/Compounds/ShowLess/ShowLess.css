@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@100;300&display=swap');
+.compound-details h1,
+.compound-details h6,
+.compound-details h4,
+.compound-details h3,
+.compound-details p {
+display: inline;
+}
+.showless-container{
+    cursor: pointer;
+    margin: 10px;
+    padding: 20px 30px;
+    background-color: rgb(255, 255, 255);
+    color: #777;
+    border: 2px solid yellowgreen;
+    border-radius: 5px;
+    font-size: 17px;
+    text-align:start;
+}
+.showless-container h3{
+    color: #1884ac;
+    padding-bottom: 10px;
+}
+
+.compound-name{
+    padding-bottom: 10px;
+}
+.compound-name h3{
+    font-size: 25px;
+    color: #1884ac;
+}
+.compound-name h3:hover{
+    color: rgb(48, 48, 48);
+    text-decoration: underline;
+}
+.showless-container h4{
+    color: rgb(100, 100, 100);
+}
+.compound-footer{
+    padding-top: 10px;
+    font-weight:600;
+    font-size: 15px;
+    color: #1884ac;
+    text-transform: capitalize;
+}
+.compound-details a{
+    color: #1884ac;
+}
+.compound-details a:hover{
+    color: #777;
+}
+.compound-details p ,.compound-details h4{
+    font-family: 'Roboto Serif', serif;
+    
+}
+.compound-footer:hover{
+    text-decoration: underline;
+}
+.ShowLess-Div .compound-details{
+    padding-bottom: 1px;
+    border-bottom: 1px solid rgb(233, 233, 233);
+    border-left: none;
+    border-right: none;
+    word-break: break-all;
+}

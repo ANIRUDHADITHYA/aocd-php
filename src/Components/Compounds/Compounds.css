@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+.compounds{
+    background-image: url("../Images/interlaced.png");
+}
+.title h1{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(102, 104, 102);
+}
+.title{
+    padding-bottom: 5px;
+}
+.compounds-content{
+    text-align: justify;
+    color: black;
+    background-position: center;
+    background-size: cover;
+    padding: 70px 50px;
+    border-radius: 10px;
+    padding-top: 7%;
+    width: 90%;
+    margin: auto;
+}
+.data-container{
+    display: flex;
+    flex-direction: column;
+}
+.menubar-filter-selected, .menubar-filter{
+    display: none;
+}
+.paginationBttns {
+    padding-top:50px;
+    width: 80%;
+    margin: auto;
+    height: 50px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 2px solid rgb(17, 177, 25);
+    color: black;
+    cursor: pointer;
+}
+
+.paginationBttns a:hover {
+    color: white;
+    background-color: rgb(17, 177, 25);
+}
+
+.paginationActive a {
+    color: white;
+    background-color: rgb(17, 177, 25);
+}
+
+.paginationDisabled a {
+    display: none;
+}
+.Compound-Searchbar .searchInputs{
+    padding-top: 0px;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 10px;
+    height: 50px
+}
+.Compound-Searchbar .searchInputs .inputBar{
+    border: 2px  black solid;
+    width: 50%;
+}
+.Compound-Searchbar .searchInputs .inputBar{
+    border-right: none;
+}
+.Compound-Searchbar .searchInputs .searchIcon{
+    border: 2px  black solid;
+}
+.Compound-Searchbar .searchInputs .searchIcon{
+    border-left: none;
+}
+
+
+
+@media(max-width: 960px){
+    .title{
+        padding-top: 100px;
+    }
+    .menubar-container{
+        display: none;
+    }
+    .compounds-content{
+        width: 100%;
+    }
+    .paginationBttns{
+        font-size: smaller;
+    }
+}

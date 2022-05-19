@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.searchInputs{
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    margin: auto;
+    padding-top: 400px;
+
+}
+.searchInputs .inputBar{
+    line-height: 60px;
+    width: 70%;
+    background-color: white;
+    border: 0;
+    border-radius: 0px;
+    border-bottom-left-radius: 5px ;    
+    border-top-left-radius: 5px ;
+    font-size: 17px;
+    font-family: 'Raleway', sans-serif;
+}
+input[placeholder]{
+    padding-left: 20px;
+}
+input:focus {
+    outline: none;
+}
+.searchIcon {
+    border-bottom-right-radius: 5px ;
+    border-top-right-radius: 5px ;
+    background-color: white;
+    place-items: center;
+    display: grid;
+    padding-right: 35px;
+    
+}
+.fa-search {
+    color: #1fa329;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 960px){
+    .searchInputs{
+        display: flex;
+        width: 70%;
+        justify-content: center;
+        margin: auto;
+        padding-top: 60vh;
+    
+    }
+    .searchInputs .inputBar{
+        height: 50px;
+        width: 70%;
+        background-color: white;
+        border: 0;
+        border-radius: 0px;
+        border-bottom-left-radius: 5px ;    
+        border-top-left-radius: 5px ;
+        font-size: 10px;
+        font-family: 'Raleway', sans-serif;
+    }
+    .searchIcon {
+        border-bottom-right-radius: 5px ;
+        border-top-right-radius: 5px ;
+        background-color:white;
+        place-items: center;
+        display: flex;
+        justify-content: center;
+        padding-right: 0px;
+        height: 50px;
+    }
+    .fa-search {
+        color: #1fa329;
+        margin-left: 0.5rem;
+        font-size: 1.5rem;
+        padding-right: 20px;
+    }
+}

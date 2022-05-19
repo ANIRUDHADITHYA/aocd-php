@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*.aboutus-know-more{
+    background-image: url("../Images/interlaced.png");
+}*/
+
+
+.aboutus-header
+{   
+    padding-top: 5%;
+    min-height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("../Images/Backdrop1.jpg");
+    background-position:top;
+    background-size: cover;
+    position: relative;
+}
+
+.aboutus-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: poppins,sans-serif;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position:absolute;
+    width: 80%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.aboutus-heading h1{
+    font-size: 62px;    
+    text-align: center;
+}
+.aboutus-heading h1 span{
+    color: #1fa329;
+}
+
+.au-container p{
+    color: rgb(80, 79, 79);
+}
+.aboutus-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px auto;
+    width: 90%;
+    text-align: justify;
+    background-image: linear-gradient(rgba(224, 250, 203, 0.4),rgba(224, 250, 203, 0.4));
+    color: black;
+    background-position: center;
+    background-size: cover;
+    padding: 70px 50px;
+    border-radius: 10px;
+}
+.au-container{
+    flex: 10;
+}
+.au-container-img{
+    flex: 7;
+    
+}
+@media(max-width: 960px){
+    .aboutus-heading h1{
+        font-size: 40px;
+    }
+    .aboutus-content{
+        flex-direction: column;
+    }
+    .au-container-img{
+        padding-top: 30px;
+    }
+    .aboutus-content{
+        width: 90%;
+        padding: 25px;
+    }
+}

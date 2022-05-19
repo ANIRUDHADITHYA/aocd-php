@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+.compounds{
+    background-image: url("../Images/interlaced.png");
+}
+.title h1{
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 5px;
+    color: rgb(102, 104, 102);
+}
+.compounds-content{
+    text-align: justify;
+    color: black;
+    background-position: center;
+    background-size: cover;
+    padding: 70px 50px;
+    border-radius: 10px;
+    padding-top: 7%;
+    width: 95%;
+    margin: auto;
+}
+.compounds-content h1{
+    display: inline;
+    padding-bottom: 0px;
+}
+.compounds-content .length-tilte{
+    background-color: rgb(241, 241, 133);
+}
+.data-container{
+    display: flex;
+    flex-direction: column;
+}
+.menubar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.menubar-filter-selected h3, .menubar-filter h3{
+    padding: 5px;
+    font-family: 'Manrope', sans-serif;
+    border: 2px solid grey;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.menubar-filter h3:hover{
+    background-color: rgb(224, 247, 189);
+}
+.menubar-filter-selected, .menubar-filter{
+    padding-right: 15px;
+}
+.menubar-filter-selected h3{
+    color: white;
+    background-color: rgb(0, 165, 22);
+}
+.not-found{
+    text-align: center;
+    color: rgb(32, 121, 113);
+}
+
+
+
+
+
+
+@media(max-width: 960px){
+    .title{
+        padding-top: 100px;
+    }
+    .menubar-container{
+        display: none;
+    }
+    .compounds-content{
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+}
