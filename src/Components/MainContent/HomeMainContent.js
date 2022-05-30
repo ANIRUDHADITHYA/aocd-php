@@ -12,7 +12,7 @@ function HomeMainContent () {
     const [AS, setAS] = useState(0);
     const [AG, setAG] = useState(0);
 
-    const localData = localStorage.getItem('data');
+    const [localData, setLocalData ] = useState(localStorage.getItem('data'));
 
     useEffect(()=>{
 
@@ -20,7 +20,8 @@ function HomeMainContent () {
         setPL(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("PL"))).length : 100);
         setAS(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AS"))).length : 100);
         setAG(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AG"))).length : 100);
-    },[])// eslint-disable-line react-hooks/exhaustive-deps
+        setLocalData(localStorage.getItem('data'))
+    },[setLocalData])// eslint-disable-line react-hooks/exhaustive-deps
     
     
 
