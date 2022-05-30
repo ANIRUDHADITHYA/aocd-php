@@ -7,7 +7,6 @@ import SearchBar from '../SearchBar/SearchBar';
 import './Home.css';
 import TypeWriterEffect from 'react-typewriter-effect';
 import {Link} from "react-router-dom";
-import Axios from "axios"
 import { useState, useEffect } from 'react';
 
 
@@ -21,11 +20,6 @@ function Home() {
     const [microbes, setMicrobes] = useState(0);
 
     const localData = localStorage.getItem('data');
-    
-    if (localData){
-        console.log("YES")
-    } else { console.log("NO")}
-
     useEffect(()=>{
     
         setCompounds(localData ? (JSON.parse(localStorage.getItem('data'))).length : 100 );
@@ -33,7 +27,7 @@ function Home() {
         setMarine(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length : 100);
         setMicrobes(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length : 100);
 
-    },[])
+    },[])// eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<div className="home">
