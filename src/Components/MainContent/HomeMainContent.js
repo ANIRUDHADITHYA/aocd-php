@@ -6,10 +6,19 @@ import home3 from '../Images/home3.png';
 import { useState, useEffect } from 'react';
 
 function HomeMainContent () {
+
+
+    const [PL, setPL] = useState(0);
+    const [AS, setAS] = useState(0);
+    const [AG, setAG] = useState(0);
+
+    useEffect(()=>{
+        setPL((JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("PL"))).length);
+        setAS((JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AS"))).length);
+        setAG((JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AG"))).length);
+    },[])
     
-    const PL = JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("PL"));
-    const AS = JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AS"));
-    const AG = JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AG"));
+    
 
         
     
@@ -42,15 +51,15 @@ function HomeMainContent () {
         <div className="row">
             <div className="img-col">
                 <img src={home1} alt='image1'/>
-                <Link to='/compounds/PL'><div className="layer"><h3>Pancreatic Lipase- {PL.length} Compounds </h3></div></Link>
+                <Link to='/compounds/PL'><div className="layer"><h3>Pancreatic Lipase- {PL} Compounds </h3></div></Link>
             </div>
             <div className="img-col">
                 <img src={home2} alt='image2'/>
-                <Link to='/compounds/AS'><div className="layer"><h3>Appetite Suppressant- {AS.length} Compounds</h3></div></Link>
+                <Link to='/compounds/AS'><div className="layer"><h3>Appetite Suppressant- {AS} Compounds</h3></div></Link>
             </div>
             <div className="img-col">
                 <img src={home3} alt='image3'/>
-                <Link to='/compounds/AG'><div className="layer"><h3>Adipogenesis- {AG.length} Compounds</h3></div></Link>
+                <Link to='/compounds/AG'><div className="layer"><h3>Adipogenesis- {AG} Compounds</h3></div></Link>
             </div>
         </div>
         </section>
