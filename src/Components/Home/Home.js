@@ -23,9 +23,9 @@ function Home() {
     useEffect(()=>{
     
         setCompounds(localData ? (JSON.parse(localStorage.getItem('data'))).length : 349 );
-        setPlants(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length : 281 );
+        setPlants(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length : 307 );
         setMarine(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length : 27);
-        setMicrobes(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length : 13);
+        setMicrobes(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length : 15);
 
     },[])// eslint-disable-line react-hooks/exhaustive-deps
 
