@@ -82,7 +82,7 @@ const changePage = ({selected}) => {
             </div>
             
             <div className='compounds-content'> 
-            <div className="title"><h1>Search Results | </h1><h1 className="length-tilte">{data.length}</h1><h1> Result Found !</h1><hr/></div>
+            <div className="title"><h1>Showing | </h1><h1 className="length-tilte">{data.length}</h1><h1> Compounds </h1><hr/></div>
             <>
             <div className="Compound-Searchbar">
                 <SearchBar placeholder={placeholderName}/>

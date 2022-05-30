@@ -10,15 +10,15 @@ function AboutUs(){
     }
     return(
         <section className="aboutus">
-        <div class="row">
-            <div class="about-col">
+        <div className="row">
+            <div className="about-col">
                 <h1>ABOUT <span>US</span></h1>
                 <p>AOCD delivers a comprehensive resource on botanicals isolated from plant source(s) 
                 and its classification. It also includes compounds derived from Marine seaweeds; 
                 Microbial source that are found to have potent source of inhibition targeting obesity.</p>
-                <Link to='/about-us' className="hero-btn red-btn" onClick={scrollTop}>KNOW MORE</Link>                    
+                <Link to='/about-us' className="hero-btn red-btn" onClick={scrollTop}>KNOW MORE</Link>                  
             </div>
-            <div class="about-col">
+            <div className="about-col">
             
             <Player
                 autoplay

@@ -3,15 +3,24 @@ import {Link} from "react-router-dom";
 import home1 from '../Images/home1.png';
 import home2 from '../Images/home2.png';
 import home3 from '../Images/home3.png';
+import { useState, useEffect } from 'react';
 
 function HomeMainContent () {
+    
+    const PL = JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("PL"));
+    const AS = JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AS"));
+    const AG = JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AG"));
+
+        
+    
+
     return(
         <section className='home-main'>
             <div className='HMC-Title'>
                 <h2>WHY AOCD ?<hr></hr></h2>
             </div>
         
-        <div class="content-col">
+        <div className="content-col">
             <p>
                 Natural plant-based compounds provide a vast pool of inhibition with the ability of 
                 being developed into clinical products. Various extracts, Secondary metabolites derived 
@@ -30,18 +39,18 @@ function HomeMainContent () {
                 played significant role in inhibiting adipogenesis.
             </p>
         </div>
-        <div class="row">
-            <div class="img-col">
+        <div className="row">
+            <div className="img-col">
                 <img src={home1} alt='image1'/>
-                <Link to='/compounds/PL'><div class="layer"><h3>Pancreatic Lipase- 219 Compounds</h3></div></Link>
+                <Link to='/compounds/PL'><div className="layer"><h3>Pancreatic Lipase- {PL.length} Compounds </h3></div></Link>
             </div>
-            <div class="img-col">
+            <div className="img-col">
                 <img src={home2} alt='image2'/>
-                <Link to='/compounds/AS'><div class="layer"><h3>Appetite Suppressant- 91 Compounds</h3></div></Link>
+                <Link to='/compounds/AS'><div className="layer"><h3>Appetite Suppressant- {AS.length} Compounds</h3></div></Link>
             </div>
-            <div class="img-col">
+            <div className="img-col">
                 <img src={home3} alt='image3'/>
-                <Link to='/compounds/AG'><div class="layer"><h3>Adipogenesis- 101 Compounds</h3></div></Link>
+                <Link to='/compounds/AG'><div className="layer"><h3>Adipogenesis- {AG.length} Compounds</h3></div></Link>
             </div>
         </div>
         </section>

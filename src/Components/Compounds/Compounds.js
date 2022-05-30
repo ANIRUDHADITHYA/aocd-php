@@ -76,7 +76,7 @@ function Compounds() {
             </div>
             
             <div className='compounds-content'>
-              <div className="title"><h1>Repository</h1></div><hr></hr>
+            <div className="title"><h1>Showing | </h1><h1 className="length-tilte">{data.length}</h1><h1> Compounds </h1><hr/></div>
               <>
               <div className="data-container">
                 <div className='menubar-container'>

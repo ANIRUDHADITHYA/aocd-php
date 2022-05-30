@@ -41,6 +41,13 @@
     color: white;
     text-align: center;
 }
+.addressContainer{
+    display: flex;
+}
+.contactBox h1{
+    text-align: center;
+    padding-bottom: 5px;
+}
 
 
 @media(max-width: 800px){

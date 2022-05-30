@@ -45,7 +45,7 @@ const UpdateCompounds = () =>{
 
 
     useEffect( ()=>{
-        Axios.get("http://localhost:5000/getdata").then((response)=>{
+        Axios.get("https://aocd.swmd.co.in/aocdbackend/api/getdata/").then((response)=>{
           setData(response.data);
         })
     },[])// eslint-disable-line react-hooks/exhaustive-deps
@@ -56,16 +56,16 @@ const UpdateCompounds = () =>{
     },[searchData])// eslint-disable-line react-hooks/exhaustive-deps
 
 
-    const handleSubmit = () =>{
+    const handleSubmit = (event) =>{
         console.log(accession_no)
-    
-        Axios.put("http://localhost:5000/updateCompound", {compound_name: compound_name, 
+        Axios.put("https://aocd.swmd.co.in/aocdbackend/api/update_compounds/", {compound_name: compound_name, 
                                                         pubchem_cid: pubchem_cid, molf: molf, mw: mw, filter_id: filter_id, moa: moa, origin: origin, 
                                                         sci_name: sci_name, ref_doi: ref_doi, yop: yop, jonl_name: jonl_name, class_comp: class_comp, 
                                                         bio_act: bio_act, iupac_name: iupac_name, canl_smiles: canl_smiles, inchl: inchl, xlogp3: xlogp3,
                                                         h_bond_d: h_bond_d, h_bond_a: h_bond_a, mol_refa: mol_refa, tpsa: tpsa, rot_bonds: rot_bonds,
                                                         heavy_atoms: heavy_atoms, lipinski: lipinski, bbb_per: bbb_per, bioavail: bioavail,
-                                                        ld50_val: ld50_val, toxicity: toxicity, accession_no: accession_no});
+                                                        ld50_val: ld50_val, toxicity: toxicity, accession_no: accession_no}).then(function(response){
+                                                            console.log(response.data)});
         
         alert("Updated Sucessfully")
         
@@ -294,9 +294,9 @@ const UpdateCompounds = () =>{
                                     </div>
                                 
                             </div>
-                                <button class="nextBtn" onClick={handleSubmit}>
-                                <span class="btnText">Update Data</span>
-                                <i class="uil uil-navigator"></i>
+                                <button className="nextBtn" onClick={handleSubmit}>
+                                <span className="btnText">Update Data</span>
+                                <i className="uil uil-navigator"></i>
                                 </button>
                             </div>
                             </div>        

@@ -12,6 +12,11 @@ import {Link} from "react-router-dom";
 function Home() {
     const placeholderName="Enter Accession NO/Compound Name/Pubchem ID/Smiles/Inchl/Origin";
     
+    const compounds = JSON.parse(localStorage.getItem('data'));
+    const plants = JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"));
+    const marine = JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"));
+    const microbes = JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"));
+
 	return (
 		<div className="home">
             <div className="home-header">
@@ -36,11 +41,11 @@ function Home() {
                 <SearchBar placeholder={placeholderName}/>
                 <div className='available-lable'>
                     <div className='lable-container'>
-                        <Link to='/search?q=A' style={{ textDecoration: 'none' }}><div className="lable-item" ><h6>349</h6><p>Compounds</p></div></Link>
+                        <Link to='/search?q=A' style={{ textDecoration: 'none' }}><div className="lable-item" ><h6>{compounds.length}</h6><p>Compounds</p></div></Link>
                         <div className="lable-item"><h6>197</h6><p>Literature</p></div>
-                        <Link to='/search?q=plant' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>281</h6><p>Plants</p></div></Link>
-                        <Link to='/search?q=marine' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>27</h6><p>Marine</p></div></Link>
-                        <Link to='/search?q=microbe' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>13</h6><p>Microbes</p></div></Link>                        
+                        <Link to='/search?q=plant' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{plants.length}</h6><p>Plants</p></div></Link>
+                        <Link to='/search?q=marine' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{marine.length}</h6><p>Marine</p></div></Link>
+                        <Link to='/search?q=microbe' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{microbes.length}</h6><p>Microbes</p></div></Link>                        
                     </div>
                 </div>
             </div>
