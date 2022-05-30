@@ -12,7 +12,16 @@ function HomeMainContent () {
     const [AS, setAS] = useState(0);
     const [AG, setAG] = useState(0);
 
+    const getData=()=>{
+
+        Axios.get("https://aocd.swmd.co.in/aocdbackend/api/getdata").then((response)=>{
+        localStorage.setItem('data', JSON.stringify(response.data));})
+    }
+
     useEffect(()=>{
+
+        getData();
+
         setPL((JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("PL"))).length);
         setAS((JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AS"))).length);
         setAG((JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AG"))).length);

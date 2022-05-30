@@ -7,23 +7,33 @@ import SearchBar from '../SearchBar/SearchBar';
 import './Home.css';
 import TypeWriterEffect from 'react-typewriter-effect';
 import {Link} from "react-router-dom";
+import Axios from "axios"
 import { useState, useEffect } from 'react';
 
 
 function Home() {
     const placeholderName="Enter Accession NO/Compound Name/Pubchem ID/Smiles/Inchl/Origin";
-
+    
+    
     const [compounds, setCompounds] = useState(0);
     const [plants, setPlants] = useState(0);
     const [marine, setMarine] = useState(0);
     const [microbes, setMicrobes] = useState(0);
+    
+    const getData=()=>{
+
+        Axios.get("https://aocd.swmd.co.in/aocdbackend/api/getdata").then((response)=>{
+        localStorage.setItem('data', JSON.stringify(response.data));})
+    }
 
     useEffect(()=>{
+
+        getData();
     
-    setCompounds((JSON.parse(localStorage.getItem('data'))).length);
-    setPlants((JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length);
-    setMarine((JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length);
-    setMicrobes((JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length);
+        setCompounds((JSON.parse(localStorage.getItem('data'))).length);
+        setPlants((JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length);
+        setMarine((JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length);
+        setMicrobes((JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length);
 
     },[])
 
