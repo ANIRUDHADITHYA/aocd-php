@@ -3,22 +3,23 @@ import {Link} from "react-router-dom";
 import home1 from '../Images/home1.png';
 import home2 from '../Images/home2.png';
 import home3 from '../Images/home3.png';
-import {useEffect } from 'react';
-import Axios from "axios";
+import { useState, useEffect } from 'react';
 
 function HomeMainContent () {
 
 
-    const getData=()=>{
+    const [PL, setPL] = useState(0);
+    const [AS, setAS] = useState(0);
+    const [AG, setAG] = useState(0);
 
-        Axios.get("https://aocd.swmd.co.in/aocdbackend/api/getdata").then((response)=>{
-        localStorage.setItem('data', JSON.stringify(response.data));})
-    }
+    const localData = localStorage.getItem('data');
 
     useEffect(()=>{
 
-        getData();
 
+        setPL(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("PL"))).length : 100);
+        setAS(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AS"))).length : 100);
+        setAG(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AG"))).length : 100);
     },[])
     
     
@@ -54,15 +55,15 @@ function HomeMainContent () {
         <div className="row">
             <div className="img-col">
                 <img src={home1} alt='image1'/>
-                <Link to='/compounds/PL'><div className="layer"><h3>Pancreatic Lipase- {(JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("PL"))).length || 0} Compounds </h3></div></Link>
+                <Link to='/compounds/PL'><div className="layer"><h3>Pancreatic Lipase- {PL} Compounds </h3></div></Link>
             </div>
             <div className="img-col">
                 <img src={home2} alt='image2'/>
-                <Link to='/compounds/AS'><div className="layer"><h3>Appetite Suppressant- {(JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AS"))).length || 0} Compounds</h3></div></Link>
+                <Link to='/compounds/AS'><div className="layer"><h3>Appetite Suppressant- {AS} Compounds</h3></div></Link>
             </div>
             <div className="img-col">
                 <img src={home3} alt='image3'/>
-                <Link to='/compounds/AG'><div className="layer"><h3>Adipogenesis- {(JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AG"))).length || 0} Compounds</h3></div></Link>
+                <Link to='/compounds/AG'><div className="layer"><h3>Adipogenesis- {AG} Compounds</h3></div></Link>
             </div>
         </div>
         </section>
