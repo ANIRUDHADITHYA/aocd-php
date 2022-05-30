@@ -19,18 +19,16 @@ function Home() {
     const [marine, setMarine] = useState(0);
     const [microbes, setMicrobes] = useState(0);
 
-    const [localData, setLocalData ] = useState(localStorage.getItem('data'));
+    const localData = localStorage.getItem('data');
     useEffect(()=>{
     
-        setCompounds(localData ? (JSON.parse(localStorage.getItem('data'))).length : 100 );
-        setPlants(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length : 100 );
-        setMarine(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length : 100);
-        setMicrobes(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length : 100);
-        setLocalData(localStorage.getItem('data'))
+        setCompounds(localData ? (JSON.parse(localStorage.getItem('data'))).length : 349 );
+        setPlants(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length : 281 );
+        setMarine(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length : 27);
+        setMicrobes(localData ? (JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length : 13);
 
-    },[setLocalData])// eslint-disable-line react-hooks/exhaustive-deps
+    },[])// eslint-disable-line react-hooks/exhaustive-deps
 
-    
 	return (
 		<div className="home">
             <div className="home-header">
