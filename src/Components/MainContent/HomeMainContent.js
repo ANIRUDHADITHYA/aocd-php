@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import home1 from '../Images/home1.png';
 import home2 from '../Images/home2.png';
 import home3 from '../Images/home3.png';
-import { useState, useEffect } from 'react';
+import {useEffect } from 'react';
 import Axios from "axios";
 
 function HomeMainContent () {
