@@ -8,18 +8,12 @@ import './Home.css';
 import TypeWriterEffect from 'react-typewriter-effect';
 import {Link} from "react-router-dom";
 import Axios from "axios"
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 
 function Home() {
     const placeholderName="Enter Accession NO/Compound Name/Pubchem ID/Smiles/Inchl/Origin";
-    
-    
-    const [compounds, setCompounds] = useState(0);
-    const [plants, setPlants] = useState(0);
-    const [marine, setMarine] = useState(0);
-    const [microbes, setMicrobes] = useState(0);
-    
+        
     const getData=()=>{
 
         Axios.get("https://aocd.swmd.co.in/aocdbackend/api/getdata").then((response)=>{
@@ -29,11 +23,6 @@ function Home() {
     useEffect(()=>{
 
         getData();
-    
-        setCompounds((JSON.parse(localStorage.getItem('data'))).length);
-        setPlants((JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length);
-        setMarine((JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length);
-        setMicrobes((JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length);
 
     },[])
 
@@ -61,11 +50,11 @@ function Home() {
                 <SearchBar placeholder={placeholderName}/>
                 <div className='available-lable'>
                     <div className='lable-container'>
-                        <Link to='/search?q=A' style={{ textDecoration: 'none' }}><div className="lable-item" ><h6>{compounds}</h6><p>Compounds</p></div></Link>
+                        <Link to='/search?q=A' style={{ textDecoration: 'none' }}><div className="lable-item" ><h6>{(JSON.parse(localStorage.getItem('data'))).length}</h6><p>Compounds</p></div></Link>
                         <div className="lable-item"><h6>197</h6><p>Literature</p></div>
-                        <Link to='/search?q=plant' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{plants}</h6><p>Plants</p></div></Link>
-                        <Link to='/search?q=marine' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{marine}</h6><p>Marine</p></div></Link>
-                        <Link to='/search?q=microbe' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{microbes}</h6><p>Microbes</p></div></Link>                        
+                        <Link to='/search?q=plant' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{(JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length}</h6><p>Plants</p></div></Link>
+                        <Link to='/search?q=marine' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{(JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length}</h6><p>Marine</p></div></Link>
+                        <Link to='/search?q=microbe' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{(JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length}</h6><p>Microbes</p></div></Link>                        
                     </div>
                 </div>
             </div>
