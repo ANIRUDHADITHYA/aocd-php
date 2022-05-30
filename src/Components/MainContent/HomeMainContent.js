@@ -54,15 +54,15 @@ function HomeMainContent () {
         <div className="row">
             <div className="img-col">
                 <img src={home1} alt='image1'/>
-                <Link to='/compounds/PL'><div className="layer"><h3>Pancreatic Lipase- {(JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("PL"))).length} Compounds </h3></div></Link>
+                <Link to='/compounds/PL'><div className="layer"><h3>Pancreatic Lipase- {(JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("PL"))).length || 0} Compounds </h3></div></Link>
             </div>
             <div className="img-col">
                 <img src={home2} alt='image2'/>
-                <Link to='/compounds/AS'><div className="layer"><h3>Appetite Suppressant- {(JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AS"))).length} Compounds</h3></div></Link>
+                <Link to='/compounds/AS'><div className="layer"><h3>Appetite Suppressant- {(JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AS"))).length || 0} Compounds</h3></div></Link>
             </div>
             <div className="img-col">
                 <img src={home3} alt='image3'/>
-                <Link to='/compounds/AG'><div className="layer"><h3>Adipogenesis- {(JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AG"))).length} Compounds</h3></div></Link>
+                <Link to='/compounds/AG'><div className="layer"><h3>Adipogenesis- {(JSON.parse(localStorage.getItem('data')).filter((data)=>data.filter_id.includes("AG"))).length || 0} Compounds</h3></div></Link>
             </div>
         </div>
         </section>

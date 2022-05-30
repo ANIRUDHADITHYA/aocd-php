@@ -52,9 +52,9 @@ function Home() {
                     <div className='lable-container'>
                         <Link to='/search?q=A' style={{ textDecoration: 'none' }}><div className="lable-item" ><h6>{(JSON.parse(localStorage.getItem('data'))).length}</h6><p>Compounds</p></div></Link>
                         <div className="lable-item"><h6>197</h6><p>Literature</p></div>
-                        <Link to='/search?q=plant' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{(JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length}</h6><p>Plants</p></div></Link>
-                        <Link to='/search?q=marine' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{(JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length}</h6><p>Marine</p></div></Link>
-                        <Link to='/search?q=microbe' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{(JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length}</h6><p>Microbes</p></div></Link>                        
+                        <Link to='/search?q=plant' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{(JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Plant"))).length || 0}</h6><p>Plants</p></div></Link>
+                        <Link to='/search?q=marine' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{(JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Marine"))).length || 0}</h6><p>Marine</p></div></Link>
+                        <Link to='/search?q=microbe' style={{ textDecoration: 'none' }}><div className="lable-item"><h6>{(JSON.parse(localStorage.getItem('data')).filter((data)=>data.origin.includes("Microbe"))).length || 0}</h6><p>Microbes</p></div></Link>                        
                     </div>
                 </div>
             </div>
